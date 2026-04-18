@@ -1,14 +1,19 @@
 package com.qk.management.service.impl;
 
 import cn.hutool.core.bean.BeanUtil;
+import com.github.pagehelper.PageHelper;
+import com.github.pagehelper.PageInfo;
+import com.qk.common.PageResult;
 import com.qk.management.mapper.DeptMapper;
 import com.qk.management.service.DeptService;
 import com.qk.model.dto.DeptSaveDTO;
 import com.qk.model.entity.Dept;
+import com.qk.model.vo.DeptVO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 /**
  * @author 33465
@@ -31,6 +36,22 @@ public class DeptServiceImpl implements DeptService {
         //TODO:保存部门信息
         deptMapper.insert(dept);
 
+    }
+
+    @Override
+    public PageResult<DeptVO> page(String name, Integer status, Integer page, Integer pageSize) {
+        //基于PageHelper分页插件实现分页
+        PageHelper.startPage(page, pageSize);
+        List<Dept> deptList = deptMapper.selectByCondition(name, status);
+        // 将deptList 转成PageHelper 的对象PageInfo
+        PageInfo<Dept> pageInfo = PageInfo.of(deptList);
+        List<DeptVO> voList = deptList.stream()
+                .map(dept -> BeanUtil.copyProperties(dept, DeptVO.class))
+                .toList();
+        return PageResult.<DeptVO>builder()
+                .total(pageInfo.getTotal())
+                .rows(voList)
+                .build();
     }
 }
    

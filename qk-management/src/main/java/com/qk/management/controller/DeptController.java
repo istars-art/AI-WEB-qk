@@ -1,14 +1,13 @@
 package com.qk.management.controller;
 
+import com.qk.common.PageResult;
 import com.qk.common.Result;
 import com.qk.management.service.DeptService;
 import com.qk.model.dto.DeptSaveDTO;
+import com.qk.model.vo.DeptVO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.annotation.Validated;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 /**
  * @author 33465
@@ -21,13 +20,8 @@ import org.springframework.web.bind.annotation.RestController;
 public class DeptController {
 
     @Autowired
-    DeptService deptService;
+    private DeptService deptService;
 
-    /**
-     * 部门添加
-     * @param dto 部门添加数据封装对象dto
-     * @return Result 统一返回结果
-     */
     @PostMapping
     public Result save(@RequestBody @Validated DeptSaveDTO dto) {
 
@@ -35,5 +29,39 @@ public class DeptController {
 
         return Result.success();
     }
+
+    @GetMapping
+    public Result page(
+            String name,
+            Integer status,
+            @RequestParam(defaultValue = "1") Integer page,
+            @RequestParam(defaultValue = "10") Integer pageSize
+    ){
+
+        PageResult<DeptVO> result = deptService.page(name, status, page, pageSize);
+
+        return Result.success(result);
+    }
+
+
 }
-   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

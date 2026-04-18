@@ -1,6 +1,8 @@
 package com.qk.management.service;
 
+import com.qk.common.PageResult;
 import com.qk.model.dto.DeptSaveDTO;
+import com.qk.model.vo.DeptVO;
 
 /**
  * @author 33465
@@ -9,5 +11,19 @@ import com.qk.model.dto.DeptSaveDTO;
  */
 
 public interface DeptService {
+    /**
+     * 部门添加
+     * @param dto 部门添加数据封装对象dto
+     */
     void save(DeptSaveDTO dto);
+
+    /**
+     * 分页条件查询部门列表
+     * @param name 部门名称
+     * @param status 部门状态
+     * @param page 页码
+     * @param pageSize 页大小
+     * @return PageResult 部门列表VO对象
+     */
+    PageResult<DeptVO> page(String name, Integer status, Integer page, Integer pageSize);
 }

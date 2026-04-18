@@ -6,5 +6,19 @@
     <insert id="insert">
         insert into dept(name,status,create_time,update_time) values(#{name},#{status},#{createTime},#{updateTime})
     </insert>
+    <select id="selectByCondition" resultType="com.qk.model.entity.Dept">
+        SELECT
+            *
+        FROM
+            dept
+        <where>
+            <if test="name != null">
+                AND name LIKE concat('%',#{name},'%')
+            </if>
+            <if test="status != null">
+                AND status = #{status}
+            </if>
+        </where>
+    </select>
 
 </mapper>
