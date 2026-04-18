@@ -6,6 +6,8 @@ import com.qk.model.dto.DeptUpdateDTO;
 import com.qk.model.entity.Dept;
 import com.qk.model.vo.DeptVO;
 
+import java.util.List;
+
 /**
  * @author 33465
  * @created 2026/4/18 上午11:30
@@ -41,4 +43,16 @@ public interface DeptService {
      * @param dto 部门修改数据封装对象dto
      */
     void update(DeptUpdateDTO dto);
+
+    /**
+     * 部门删除
+     * @param id 部门id
+     */
+    void delete(Integer id);
+
+    /**
+     * 查询所有部门
+     * @return List<Dept> 部门列表
+     */
+    List<Dept> requestAll();
 }

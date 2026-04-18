@@ -11,6 +11,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 /**
  * @author 33465
  * @created 2026/4/18 上午11:26
@@ -57,6 +59,17 @@ public class DeptController {
         return Result.success();
     }
 
+    @DeleteMapping("/{id}")
+    public Result delete(@PathVariable Integer id){
+        deptService.delete(id);
+        return Result.success();
+    }
+
+    @GetMapping("/list")
+    public Result requestAll(){
+        List<Dept> result = deptService.requestAll();
+        return Result.success(result);
+    }
 
 }
 
