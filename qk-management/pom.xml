@@ -18,6 +18,23 @@
 		<java.version>21</java.version>
 	</properties>
 	<dependencies>
+		<!--项目间模块依赖关系  start-->
+		<dependency>
+			<groupId>com.qk</groupId>
+			<artifactId>qk-entity</artifactId>
+			<version>1.0.1</version>
+<!--			<scope>compile</scope>-->
+		</dependency>
+
+		<dependency>
+		<groupId>com.qk</groupId>
+		<artifactId>qk-common</artifactId>
+		<version>1.0.1</version>
+	</dependency>
+
+
+		<!--项目间模块依赖关系  end-->
+
 		<!--WEB开发的起步依赖-->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -51,6 +68,11 @@
 			<groupId>org.mybatis.spring.boot</groupId>
 			<artifactId>mybatis-spring-boot-starter-test</artifactId>
 			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>cn.hutool</groupId>
+			<artifactId>hutool-all</artifactId>
+			<version>5.8.25</version>
 		</dependency>
 	</dependencies>
 
