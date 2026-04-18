@@ -4,6 +4,8 @@ import com.qk.common.PageResult;
 import com.qk.common.Result;
 import com.qk.management.service.DeptService;
 import com.qk.model.dto.DeptSaveDTO;
+import com.qk.model.dto.DeptUpdateDTO;
+import com.qk.model.entity.Dept;
 import com.qk.model.vo.DeptVO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.annotation.Validated;
@@ -41,6 +43,18 @@ public class DeptController {
         PageResult<DeptVO> result = deptService.page(name, status, page, pageSize);
 
         return Result.success(result);
+    }
+
+    @GetMapping("/{id}")
+    public Result getById(@PathVariable Integer id){
+        Dept dept = deptService.getById(id);
+        return Result.success(dept);
+    }
+
+    @PutMapping
+    public Result update(@RequestBody DeptUpdateDTO dto){
+        deptService.update(dto);
+        return Result.success();
     }
 
 

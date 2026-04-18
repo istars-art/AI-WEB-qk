@@ -2,6 +2,8 @@ package com.qk.management.service;
 
 import com.qk.common.PageResult;
 import com.qk.model.dto.DeptSaveDTO;
+import com.qk.model.dto.DeptUpdateDTO;
+import com.qk.model.entity.Dept;
 import com.qk.model.vo.DeptVO;
 
 /**
@@ -26,4 +28,17 @@ public interface DeptService {
      * @return PageResult 部门列表VO对象
      */
     PageResult<DeptVO> page(String name, Integer status, Integer page, Integer pageSize);
+
+    /**
+     * 根据id查询部门
+     * @param id 部门id
+     * @return Dept 部门实体类
+     */
+    Dept getById(Integer id);
+
+    /**
+     * 部门修改
+     * @param dto 部门修改数据封装对象dto
+     */
+    void update(DeptUpdateDTO dto);
 }

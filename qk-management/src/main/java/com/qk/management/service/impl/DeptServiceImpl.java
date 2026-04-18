@@ -7,6 +7,7 @@ import com.qk.common.PageResult;
 import com.qk.management.mapper.DeptMapper;
 import com.qk.management.service.DeptService;
 import com.qk.model.dto.DeptSaveDTO;
+import com.qk.model.dto.DeptUpdateDTO;
 import com.qk.model.entity.Dept;
 import com.qk.model.vo.DeptVO;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -52,6 +53,18 @@ public class DeptServiceImpl implements DeptService {
                 .total(pageInfo.getTotal())
                 .rows(voList)
                 .build();
+    }
+
+    @Override
+    public Dept getById(Integer id) {
+        return deptMapper.selectById(id);
+    }
+
+    @Override
+    public void update(DeptUpdateDTO dto) {
+        Dept dept = BeanUtil.copyProperties(dto, Dept.class);
+        dept.setUpdateTime(LocalDateTime.now());
+        deptMapper.update(dept);
     }
 }
    

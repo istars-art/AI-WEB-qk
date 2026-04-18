@@ -27,4 +27,17 @@ public interface DeptMapper {
      */
     List<Dept> selectByCondition(String name, Integer status);
 
+    /**
+     * 根据id查询部门
+     * @param id 部门id
+     * @return Dept
+     */
+    Dept selectById(Integer id);
+
+    /**
+     * 部门修改
+     * @param dept 部门修改数据封装对象dto
+     */
+    void update(Dept dept);
+
 }

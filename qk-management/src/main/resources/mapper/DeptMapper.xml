@@ -6,6 +6,15 @@
     <insert id="insert">
         insert into dept(name,status,create_time,update_time) values(#{name},#{status},#{createTime},#{updateTime})
     </insert>
+    <update id="update">
+        UPDATE
+            dept
+        SET
+            name = #{name},
+            update_time = #{updateTime}
+        WHERE
+            id = #{id}
+    </update>
     <select id="selectByCondition" resultType="com.qk.model.entity.Dept">
         SELECT
             *
@@ -19,6 +28,14 @@
                 AND status = #{status}
             </if>
         </where>
+    </select>
+    <select id="selectById" resultType="com.qk.model.entity.Dept">
+        SELECT
+            *
+        FROM
+            dept
+        WHERE
+            id = #{id}
     </select>
 
 </mapper>
