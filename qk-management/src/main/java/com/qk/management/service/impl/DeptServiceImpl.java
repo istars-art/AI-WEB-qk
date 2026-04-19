@@ -4,6 +4,9 @@ import cn.hutool.core.bean.BeanUtil;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import com.qk.common.PageResult;
+import com.qk.common.enums.QkBizExceptionInfoEnum;
+import com.qk.common.enums.StatusEnum;
+import com.qk.common.exception.QkBizException;
 import com.qk.management.mapper.DeptMapper;
 import com.qk.management.service.DeptService;
 import com.qk.model.dto.DeptSaveDTO;
@@ -15,6 +18,7 @@ import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
 import java.util.List;
+import java.util.Objects;
 
 /**
  * @author 33465
@@ -69,6 +73,13 @@ public class DeptServiceImpl implements DeptService {
 
     @Override
     public void delete(Integer id) {
+        Dept dept = deptMapper.selectById(id);
+        if (Objects.isNull(dept)){
+            throw new QkBizException(QkBizExceptionInfoEnum.DEPT_NOT_EXIST);
+        }
+        if (Objects.equals(dept.getStatus(), StatusEnum.ENABLE.getValue())){
+            throw new QkBizException(QkBizExceptionInfoEnum.DEPT_STATUS_INVALID);
+        }
         deptMapper.delete(id);
     }
 
