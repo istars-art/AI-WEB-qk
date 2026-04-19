@@ -33,6 +33,11 @@ public class DeptServiceImpl implements DeptService {
 
     @Override
     public void save(DeptSaveDTO dto) {
+        //名称重复检验
+        List<Dept> depts = deptMapper.selectByName(dto.getName());
+        if (!depts.isEmpty()){
+            throw new QkBizException(QkBizExceptionInfoEnum.DEPT_NAME_REPEAT);
+        }
         //将dto转换成Dept实体类
         Dept dept = BeanUtil.copyProperties(dto, Dept.class);
         dept.setCreateTime(LocalDateTime.now());
@@ -60,12 +65,28 @@ public class DeptServiceImpl implements DeptService {
     }
 
     @Override
-    public Dept getById(Integer id) {
-        return deptMapper.selectById(id);
+    public DeptVO getById(Integer id) {
+        //id校验
+        Dept dept = deptMapper.selectById(id);
+        if (Objects.isNull(dept)){
+            throw new QkBizException(QkBizExceptionInfoEnum.DEPT_NOT_EXIST);
+        }
+        return BeanUtil.copyProperties(dept, DeptVO.class);
     }
+
 
     @Override
     public void update(DeptUpdateDTO dto) {
+        //id校验
+        if (Objects.isNull(deptMapper.selectById(dto.getId()))){
+            throw new QkBizException(QkBizExceptionInfoEnum.DEPT_NOT_EXIST);
+        }
+        // 名称重复检验
+        List<Dept> depts = deptMapper.selectByIdAndName(dto.getId(), dto.getName());
+        if (!depts.isEmpty()){
+            throw new QkBizException(QkBizExceptionInfoEnum.DEPT_NAME_REPEAT);
+        }
+
         Dept dept = BeanUtil.copyProperties(dto, Dept.class);
         dept.setUpdateTime(LocalDateTime.now());
         deptMapper.update(dept);
@@ -84,8 +105,12 @@ public class DeptServiceImpl implements DeptService {
     }
 
     @Override
-    public List<Dept> requestAll() {
-        return deptMapper.selectAll();
+    public List<DeptVO> requestAll() {
+
+        List<Dept> deptList = deptMapper.selectAll();
+        return deptList.stream()
+                .map(dept -> BeanUtil.copyProperties(dept, DeptVO.class))
+                .toList();
     }
 
 }

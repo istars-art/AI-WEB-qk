@@ -14,6 +14,7 @@
             dept
         SET
             name = #{name},
+            status = #{status},
             update_time = #{updateTime}
         WHERE
             id = #{id}
@@ -51,6 +52,23 @@
             *
         FROM
             dept
+    </select>
+    <select id="selectByIdAndName" resultType="com.qk.model.entity.Dept">
+        SELECT
+            *
+        FROM
+            dept
+        WHERE
+            id != #{id}     # 自己修改可以跟自己的名称重复
+            And name = #{name}
+    </select>
+    <select id="selectByName" resultType="com.qk.model.entity.Dept">
+        SELECT
+            *
+        FROM
+            dept
+        WHERE
+            name = #{name}
     </select>
 
 </mapper>

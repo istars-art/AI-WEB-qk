@@ -1,6 +1,7 @@
 package com.qk.model.dto;
 
 import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -17,12 +18,17 @@ public class DeptUpdateDTO {
     /**
      * 部门id
      */
-    @NotBlank(message = "部门id不能为空")
+    @NotNull(message = "部门id不能为空")
     private Integer id;
     /**
      * 部门名称
      */
     @NotBlank(message = "部门名称不能为空")
     private String name;
+    /**
+     * 部门状态
+     */
+    @NotNull(message = "部门状态不能空")
+    private Integer status;
 }
    

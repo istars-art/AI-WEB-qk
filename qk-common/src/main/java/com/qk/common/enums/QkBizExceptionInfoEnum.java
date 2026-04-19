@@ -8,7 +8,8 @@ package com.qk.common.enums;
 public enum QkBizExceptionInfoEnum implements Code{
 
     DEPT_NOT_EXIST(1001, "部门不存在"),
-    DEPT_STATUS_INVALID(1002, "部门状态不合法")
+    DEPT_STATUS_INVALID(1002, "部门状态不合法"),
+    DEPT_NAME_REPEAT(1003, "部门名称重复"),
     ;
 
     private final Integer value;

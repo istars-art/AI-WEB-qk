@@ -51,4 +51,19 @@ public interface DeptMapper {
      * @return List<Dept>
      */
     List<Dept> selectAll();
+
+    /**
+     * 根据id和部门名称查询部门
+     * @param id 部门id
+     * @param name 部门名称
+     * @return List<Dept>
+     */
+    List<Dept> selectByIdAndName(Integer id, String name);
+
+    /**
+     * 根据部门名称查询部门
+     * @param name 部门名称
+     * @return List<Dept>
+     */
+    List<Dept> selectByName(String name);
 }

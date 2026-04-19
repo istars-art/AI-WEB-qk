@@ -3,7 +3,6 @@ package com.qk.management.service;
 import com.qk.common.PageResult;
 import com.qk.model.dto.DeptSaveDTO;
 import com.qk.model.dto.DeptUpdateDTO;
-import com.qk.model.entity.Dept;
 import com.qk.model.vo.DeptVO;
 
 import java.util.List;
@@ -36,7 +35,7 @@ public interface DeptService {
      * @param id 部门id
      * @return Dept 部门实体类
      */
-    Dept getById(Integer id);
+    DeptVO getById(Integer id);
 
     /**
      * 部门修改
@@ -54,5 +53,5 @@ public interface DeptService {
      * 查询所有部门
      * @return List<Dept> 部门列表
      */
-    List<Dept> requestAll();
+    List<DeptVO> requestAll();
 }
