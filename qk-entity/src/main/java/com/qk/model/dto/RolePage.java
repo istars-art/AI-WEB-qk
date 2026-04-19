@@ -10,8 +10,6 @@ import lombok.NoArgsConstructor;
  * @desciption 角色分页查询DTO
  */
 @Data
-@NoArgsConstructor
-@AllArgsConstructor
 public class RolePage extends PageBaseDTO{
     private String name;
     private String label;

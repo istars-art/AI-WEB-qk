@@ -10,8 +10,6 @@ import lombok.NoArgsConstructor;
  * @desciption 分页DTO基类
  */
 @Data
-@NoArgsConstructor
-@AllArgsConstructor
 public class PageBaseDTO {
     private Integer page = 1;
     private Integer pageSize = 10;
