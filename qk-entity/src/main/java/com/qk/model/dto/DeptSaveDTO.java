@@ -2,6 +2,7 @@ package com.qk.model.dto;
 
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Size;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -20,6 +21,7 @@ public class DeptSaveDTO {
     /**
      * 部门名称
      */
+    @Size(min = 2,max = 10,message = "名称长度必须在2~10之间")
     @NotBlank(message = "部门名称不能为空")
     String name;
 
