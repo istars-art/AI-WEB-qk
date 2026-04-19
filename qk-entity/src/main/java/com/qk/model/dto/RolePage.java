@@ -1,0 +1,19 @@
+package com.qk.model.dto;
+
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+/**
+ * @author 33465
+ * @created 2026/4/19 下午9:02
+ * @desciption 角色分页查询DTO
+ */
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+public class RolePage extends PageBaseDTO{
+    private String name;
+    private String label;
+}
+   
