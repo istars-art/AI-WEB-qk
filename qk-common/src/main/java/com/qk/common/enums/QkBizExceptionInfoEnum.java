@@ -11,7 +11,9 @@ public enum QkBizExceptionInfoEnum implements Code{
     DEPT_STATUS_INVALID(1002, "部门状态不合法"),
     DEPT_NAME_REPEAT(1003, "部门名称重复"),
     ROLE_NOT_EXIST(2001, "角色不存在"),
-    ROLE_REPEAT(1003, "角色名称或角色标识重复"),
+    ROLE_REPEAT(2002, "角色名称或角色标识重复"),
+    COURSE_NOT_EXIST(3001, "课程不存在"),
+    COURSE_REPEAT(3002, "课程重复")
     ;
 
     private final Integer value;

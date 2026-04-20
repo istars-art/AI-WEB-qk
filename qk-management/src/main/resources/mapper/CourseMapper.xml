@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.qk.management.mapper.CourseMapper">
+    <insert id="insert" parameterType="com.qk.model.entity.Course">
+        INSERT INTO
+            course(subject, name, price, target, description, create_time, update_time)
+        VALUES
+            (#{subject}, #{name}, #{price}, #{target}, #{description}, #{createTime}, #{updateTime})
+    </insert>
+    <update id="updateById" parameterType="com.qk.model.entity.Course">
+        UPDATE
+            course
+        <set>
+            subject = #{subject},
+            name = #{name},
+            price = #{price},
+            target = #{target},
+            <if test="description != null">
+                description = #{description},
+            </if>
+            update_time = #{updateTime}
+        </set>
+        WHERE
+            id = #{id}
+    </update>
+    <delete id="deleteById" parameterType="java.lang.Integer">
+       DELETE
+
+           FROM
+            course
+        WHERE
+            id = #{id}
+    </delete>
+
+   <!-- ... existing code ... -->
+    <select id="selectByCondition" resultType="com.qk.model.entity.Course">
+        SELECT
+            *
+        FROM
+            course
+        <where>
+            <if test="name != null and name != ''">
+                name LIKE CONCAT('%',#{name},'%')
+            </if>
+            <if test="subject != null and subject != ''">
+                AND subject = #{subject}
+            </if>
+            <if test="target != null and target != ''">
+                AND target = #{target}
+            </if>
+        </where>
+    </select>
+<!-- ... existing code ... -->
+
+    <select id="selectById" resultType="com.qk.model.entity.Course" parameterType="java.lang.Integer">
+        SELECT
+            *
+        FROM
+            course
+        WHERE
+            id = #{id}
+    </select>
+    <select id="selectAll" resultType="com.qk.model.entity.Course">
+        SELECT
+            *
+        FROM
+            course
+    </select>
+    <select id="selectByConditionEnhanced" resultType="com.qk.model.entity.Course">
+        SELECT
+            *
+        FROM
+            course
+        <where>
+            <if test="name != null and name != ''">
+                AND name = #{name}
+            </if>
+            <if test="subject != null and subject != ''">
+                AND subject = #{subject}
+            </if>
+            <if test="target != null and target != ''">
+                AND target = #{target}
+            </if>
+        </where>
+    </select>
+</mapper>
