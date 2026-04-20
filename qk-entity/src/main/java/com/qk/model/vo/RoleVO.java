@@ -21,7 +21,7 @@ public class RoleVO {
     private Integer id; // 角色id，主键
     private String name; // 角色名称
     private String label; // 角色标识
-    private LocalDateTime createTime; // 创建时间
+//    private LocalDateTime createTime; // 创建时间
     private LocalDateTime updateTime; // 修改时间
 
 }

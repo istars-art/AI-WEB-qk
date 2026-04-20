@@ -2,7 +2,11 @@ package com.qk.management.service;
 
 import com.qk.common.PageResult;
 import com.qk.model.dto.RolePage;
+import com.qk.model.dto.RoleSaveDTO;
+import com.qk.model.dto.RoleUpdateDTO;
 import com.qk.model.vo.RoleVO;
+
+import java.util.List;
 
 /**
  * @author 33465
@@ -17,4 +21,36 @@ public interface RoleService {
      * @return PageResult<RoleVO>
      */
     PageResult<RoleVO> getByPage(RolePage dto);
+
+    /**
+     * 删除角色
+     * @param id 角色id
+     */
+    void deleteById(Integer id);
+
+    /**
+     * 添加角色
+     * @param dto 角色信息
+     */
+    void save(RoleSaveDTO dto);
+
+    /**
+     * 根据id查询角色
+     * @param id 角色id
+     * @return RoleVO
+     */
+    RoleVO getById(Integer id);
+
+    /**
+     * 修改角色
+     * @param dto 角色信息
+     */
+    void update(RoleUpdateDTO dto);
+
+    /**
+     * 查询所有角色
+     * @return List<RoleVO>
+     */
+    List<RoleVO> getAll();
+
 }
