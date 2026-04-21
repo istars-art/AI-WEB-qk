@@ -1,5 +1,6 @@
 package com.qk.management.controller;
 
+import cn.hutool.json.JSONUtil;
 import com.qk.common.PageResult;
 import com.qk.common.Result;
 import com.qk.management.service.CourseService;
@@ -7,6 +8,7 @@ import com.qk.model.dto.CoursePage;
 import com.qk.model.dto.CourseSaveDTO;
 import com.qk.model.dto.CourseUpdateDTO;
 import com.qk.model.vo.CourseVO;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -17,6 +19,7 @@ import java.util.List;
  * @created 2026/4/20 下午5:33
  * @desciption 课程管理控制器
  */
+@Slf4j
 @RestController
 @RequestMapping("/courses")
 public class CourseController {
@@ -32,12 +35,14 @@ public class CourseController {
 
     @DeleteMapping("/{id}")
     public Result deleteById(@PathVariable Integer id) {
+        log.info("删除的课程id是:{}",id);
         courseService.deleteById(id);
         return Result.success();
     }
 
     @PostMapping
     public Result save(@RequestBody CourseSaveDTO courseSaveDTO) {
+        log.info("保存的课程信息是:{}", JSONUtil.parse(courseSaveDTO));
         courseService.save(courseSaveDTO);
         return Result.success();
     }
@@ -50,6 +55,7 @@ public class CourseController {
 
     @PutMapping
     public Result update(@RequestBody CourseUpdateDTO courseUpdateDTO){
+        log.info("修改的课程信息是:{}", JSONUtil.parse(courseUpdateDTO));
         courseService.update(courseUpdateDTO);
         return Result.success();
     }

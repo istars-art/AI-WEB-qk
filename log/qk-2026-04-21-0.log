@@ -1,0 +1,49 @@
+2026-04-21 19:50:49.201 [restartedMain] INFO  com.qk.QkApp-Starting QkApp using Java 21.0.10 with PID 8228 (C:\Project\itheima-hz-01\qk-parent\qk-management\target\classes started by 33465 in C:\Project\itheima-hz-01\qk-parent)
+2026-04-21 19:50:49.202 [restartedMain] INFO  com.qk.QkApp-No active profile set, falling back to 1 default profile: "default"
+2026-04-21 19:50:50.240 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer-Tomcat initialized with port 8080 (http)
+2026-04-21 19:50:50.245 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol-Initializing ProtocolHandler ["http-nio-8080"]
+2026-04-21 19:50:50.251 [restartedMain] INFO  org.apache.catalina.core.StandardService-Starting service [Tomcat]
+2026-04-21 19:50:50.252 [restartedMain] INFO  org.apache.catalina.core.StandardEngine-Starting Servlet engine: [Apache Tomcat/10.1.53]
+2026-04-21 19:50:50.335 [restartedMain] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/]-Initializing Spring embedded WebApplicationContext
+2026-04-21 19:50:50.336 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext-Root WebApplicationContext: initialization completed in 1126 ms
+2026-04-21 19:50:50.985 [restartedMain] INFO  o.s.b.d.autoconfigure.OptionalLiveReloadServer-LiveReload server is running on port 35729
+2026-04-21 19:50:51.011 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol-Starting ProtocolHandler ["http-nio-8080"]
+2026-04-21 19:50:51.018 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer-Tomcat started on port 8080 (http) with context path '/'
+2026-04-21 19:50:51.031 [restartedMain] INFO  com.qk.QkApp-Started QkApp in 1.972 seconds (process running for 679.284)
+2026-04-21 19:50:51.035 [restartedMain] INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener-Condition evaluation unchanged
+2026-04-21 19:50:56.071 [http-nio-8080-exec-2] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/]-Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-04-21 19:50:56.071 [http-nio-8080-exec-2] INFO  org.springframework.web.servlet.DispatcherServlet-Initializing Servlet 'dispatcherServlet'
+2026-04-21 19:50:56.073 [http-nio-8080-exec-2] INFO  org.springframework.web.servlet.DispatcherServlet-Completed initialization in 1 ms
+2026-04-21 19:50:56.106 [http-nio-8080-exec-2] INFO  com.qk.management.controller.DeptController-保存的部门信息是:{"name":"市场五部","status":1}
+2026-04-21 19:50:56.109 [http-nio-8080-exec-2] INFO  com.zaxxer.hikari.HikariDataSource-HikariPool-2 - Starting...
+2026-04-21 19:50:56.152 [http-nio-8080-exec-2] INFO  com.zaxxer.hikari.pool.HikariPool-HikariPool-2 - Added connection com.mysql.cj.jdbc.ConnectionImpl@5d8b2ed
+2026-04-21 19:50:56.153 [http-nio-8080-exec-2] INFO  com.zaxxer.hikari.HikariDataSource-HikariPool-2 - Start completed.
+2026-04-21 19:52:10.254 [SpringApplicationShutdownHook] INFO  o.s.boot.web.embedded.tomcat.GracefulShutdown-Commencing graceful shutdown. Waiting for active requests to complete
+2026-04-21 19:52:10.266 [tomcat-shutdown] INFO  o.s.boot.web.embedded.tomcat.GracefulShutdown-Graceful shutdown complete
+2026-04-21 19:52:10.270 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource-HikariPool-2 - Shutdown initiated...
+2026-04-21 19:52:10.274 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource-HikariPool-2 - Shutdown completed.
+2026-04-21 19:52:14.179 [background-preinit] INFO  org.hibernate.validator.internal.util.Version-HV000001: Hibernate Validator 8.0.3.Final
+2026-04-21 19:52:14.235 [restartedMain] INFO  com.qk.QkApp-Starting QkApp using Java 21.0.10 with PID 22852 (C:\Project\itheima-hz-01\qk-parent\qk-management\target\classes started by 33465 in C:\Project\itheima-hz-01\qk-parent)
+2026-04-21 19:52:14.236 [restartedMain] INFO  com.qk.QkApp-No active profile set, falling back to 1 default profile: "default"
+2026-04-21 19:52:14.292 [restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor-Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2026-04-21 19:52:14.293 [restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor-For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2026-04-21 19:52:15.873 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer-Tomcat initialized with port 8080 (http)
+2026-04-21 19:52:15.889 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol-Initializing ProtocolHandler ["http-nio-8080"]
+2026-04-21 19:52:15.891 [restartedMain] INFO  org.apache.catalina.core.StandardService-Starting service [Tomcat]
+2026-04-21 19:52:15.892 [restartedMain] INFO  org.apache.catalina.core.StandardEngine-Starting Servlet engine: [Apache Tomcat/10.1.53]
+2026-04-21 19:52:15.962 [restartedMain] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/]-Initializing Spring embedded WebApplicationContext
+2026-04-21 19:52:15.963 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext-Root WebApplicationContext: initialization completed in 1670 ms
+2026-04-21 19:52:16.854 [restartedMain] INFO  o.s.b.d.autoconfigure.OptionalLiveReloadServer-LiveReload server is running on port 35729
+2026-04-21 19:52:16.883 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol-Starting ProtocolHandler ["http-nio-8080"]
+2026-04-21 19:52:16.914 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer-Tomcat started on port 8080 (http) with context path '/'
+2026-04-21 19:52:16.925 [restartedMain] INFO  com.qk.QkApp-Started QkApp in 3.283 seconds (process running for 4.619)
+2026-04-21 19:53:06.619 [http-nio-8080-exec-2] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/]-Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-04-21 19:53:06.620 [http-nio-8080-exec-2] INFO  org.springframework.web.servlet.DispatcherServlet-Initializing Servlet 'dispatcherServlet'
+2026-04-21 19:53:06.622 [http-nio-8080-exec-2] INFO  org.springframework.web.servlet.DispatcherServlet-Completed initialization in 1 ms
+2026-04-21 19:53:06.814 [http-nio-8080-exec-2] INFO  com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Starting...
+2026-04-21 19:53:07.786 [http-nio-8080-exec-2] INFO  com.zaxxer.hikari.pool.HikariPool-HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@1ba00489
+2026-04-21 19:53:07.793 [http-nio-8080-exec-2] INFO  com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Start completed.
+2026-04-21 19:53:23.295 [http-nio-8080-exec-3] INFO  com.qk.management.controller.DeptController-删除的部门id是:22
+2026-04-21 19:53:23.326 [http-nio-8080-exec-3] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver-Resolved [com.qk.common.exception.QkBizException: 部门状态不合法]
+2026-04-21 19:53:45.567 [http-nio-8080-exec-4] INFO  com.qk.management.controller.DeptController-修改的部门信息是:{"id":22,"name":"test21","status":0}
+2026-04-21 19:54:18.510 [http-nio-8080-exec-5] INFO  com.qk.management.controller.DeptController-删除的部门id是:22

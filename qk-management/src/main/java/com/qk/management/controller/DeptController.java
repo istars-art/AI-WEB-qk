@@ -1,11 +1,13 @@
 package com.qk.management.controller;
 
+import cn.hutool.json.JSONUtil;
 import com.qk.common.PageResult;
 import com.qk.common.Result;
 import com.qk.management.service.DeptService;
 import com.qk.model.dto.DeptSaveDTO;
 import com.qk.model.dto.DeptUpdateDTO;
 import com.qk.model.vo.DeptVO;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
@@ -18,6 +20,7 @@ import java.util.List;
  * @desciption 部门管理控制器
  */
 
+@Slf4j
 @RestController
 @RequestMapping("/depts")
 public class DeptController {
@@ -27,9 +30,9 @@ public class DeptController {
 
     @PostMapping
     public Result save(@RequestBody @Validated DeptSaveDTO dto) {
+        log.info("保存的部门信息是:{}", JSONUtil.parse(dto));
 
         deptService.save(dto);
-
         return Result.success();
     }
 
@@ -54,12 +57,14 @@ public class DeptController {
 
     @PutMapping
     public Result update(@RequestBody @Validated DeptUpdateDTO dto){
+        log.info("修改的部门信息是:{}", JSONUtil.parse(dto));
         deptService.update(dto);
         return Result.success();
     }
 
     @DeleteMapping("/{id}")
     public Result delete(@PathVariable Integer id){
+        log.info("删除的部门id是:{}",id);
         deptService.delete(id);
         return Result.success();
     }
