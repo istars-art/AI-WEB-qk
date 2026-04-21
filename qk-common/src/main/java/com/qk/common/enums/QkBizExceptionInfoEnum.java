@@ -13,7 +13,10 @@ public enum QkBizExceptionInfoEnum implements Code{
     ROLE_NOT_EXIST(2001, "角色不存在"),
     ROLE_REPEAT(2002, "角色名称或角色标识重复"),
     COURSE_NOT_EXIST(3001, "课程不存在"),
-    COURSE_REPEAT(3002, "课程重复")
+    COURSE_REPEAT(3002, "课程重复"),
+    USER_NAME_EXIST(4001, "用户名已存在"),
+    USER_PHONE_EXIST(4002, "手机号已存在"),
+    USER_EMAIL_EXIST(4003, "邮箱已存在"),
     ;
 
     private final Integer value;

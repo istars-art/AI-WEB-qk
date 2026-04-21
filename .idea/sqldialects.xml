@@ -4,5 +4,6 @@
     <file url="file://$PROJECT_DIR$/qk-management/src/main/resources/mapper/CourseMapper.xml" dialect="MySQL" />
     <file url="file://$PROJECT_DIR$/qk-management/src/main/resources/mapper/DeptMapper.xml" dialect="MySQL" />
     <file url="file://$PROJECT_DIR$/qk-management/src/main/resources/mapper/RoleMapper.xml" dialect="MySQL" />
+    <file url="file://$PROJECT_DIR$/qk-management/src/main/resources/mapper/UserMapper.xml" dialect="MySQL" />
   </component>
 </project>
