@@ -1,12 +1,20 @@
 package com.qk.model.vo;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
 import java.time.LocalDateTime;
 
 /**
  * @author 33465
  * @created 2026/4/21 下午8:38
  * @desciption 用户信息返回实体类
+ *
  */
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
 public class UserVO {
     /**
      * id, 主键

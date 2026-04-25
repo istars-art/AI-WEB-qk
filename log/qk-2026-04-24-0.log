@@ -1,0 +1,20 @@
+2026-04-24 09:27:44.996 [background-preinit] INFO  org.hibernate.validator.internal.util.Version-HV000001: Hibernate Validator 8.0.3.Final
+2026-04-24 09:27:45.064 [restartedMain] INFO  com.qk.QkApp-Starting QkApp using Java 21.0.10 with PID 14016 (C:\Project\itheima-hz-01\qk-parent\qk-management\target\classes started by 33465 in C:\Project\itheima-hz-01\qk-parent)
+2026-04-24 09:27:45.065 [restartedMain] INFO  com.qk.QkApp-No active profile set, falling back to 1 default profile: "default"
+2026-04-24 09:27:45.135 [restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor-Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2026-04-24 09:27:45.135 [restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor-For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2026-04-24 09:27:46.920 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer-Tomcat initialized with port 8080 (http)
+2026-04-24 09:27:46.945 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol-Initializing ProtocolHandler ["http-nio-8080"]
+2026-04-24 09:27:46.947 [restartedMain] INFO  org.apache.catalina.core.StandardService-Starting service [Tomcat]
+2026-04-24 09:27:46.947 [restartedMain] INFO  org.apache.catalina.core.StandardEngine-Starting Servlet engine: [Apache Tomcat/10.1.53]
+2026-04-24 09:27:47.034 [restartedMain] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/]-Initializing Spring embedded WebApplicationContext
+2026-04-24 09:27:47.035 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext-Root WebApplicationContext: initialization completed in 1899 ms
+2026-04-24 09:27:48.434 [restartedMain] INFO  o.s.b.d.autoconfigure.OptionalLiveReloadServer-LiveReload server is running on port 35729
+2026-04-24 09:27:48.487 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol-Starting ProtocolHandler ["http-nio-8080"]
+2026-04-24 09:27:48.525 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer-Tomcat started on port 8080 (http) with context path '/'
+2026-04-24 09:27:48.538 [restartedMain] INFO  com.qk.QkApp-Started QkApp in 4.128 seconds (process running for 5.458)
+2026-04-24 09:28:06.235 [http-nio-8080-exec-2] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/]-Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-04-24 09:28:06.235 [http-nio-8080-exec-2] INFO  org.springframework.web.servlet.DispatcherServlet-Initializing Servlet 'dispatcherServlet'
+2026-04-24 09:28:06.236 [http-nio-8080-exec-2] INFO  org.springframework.web.servlet.DispatcherServlet-Completed initialization in 1 ms
+2026-04-24 11:16:01.922 [SpringApplicationShutdownHook] INFO  o.s.boot.web.embedded.tomcat.GracefulShutdown-Commencing graceful shutdown. Waiting for active requests to complete
+2026-04-24 11:16:01.942 [tomcat-shutdown] INFO  o.s.boot.web.embedded.tomcat.GracefulShutdown-Graceful shutdown complete
