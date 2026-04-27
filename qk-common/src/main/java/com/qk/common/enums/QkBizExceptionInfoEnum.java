@@ -17,7 +17,8 @@ public enum QkBizExceptionInfoEnum implements Code{
     USER_NAME_EXIST(4001, "用户名已存在"),
     USER_PHONE_EXIST(4002, "手机号已存在"),
     USER_EMAIL_EXIST(4003, "邮箱已存在"),
-    ;
+    USER_ID_ERROR(4004, "用户id不合法"),
+    USER_NOT_EXIST(4005,"用户id不存在");
 
     private final Integer value;
     private final String msg;

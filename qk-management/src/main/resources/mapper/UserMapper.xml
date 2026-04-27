@@ -18,6 +18,13 @@
             #{createTime},#{updateTime})
 
     </insert>
+    <delete id="deleteByIds">
+        DELETE FROM user
+        WHERE id IN
+        <foreach item="id" collection="ids" separator="," open="(" close=")">
+            #{id}
+        </foreach>
+    </delete>
 
     <select id="selectByCondition" resultType="com.qk.model.entity.dos.UserDO"
             parameterType="com.qk.model.dto.UserPage">

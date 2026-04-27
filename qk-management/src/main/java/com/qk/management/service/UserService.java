@@ -5,6 +5,8 @@ import com.qk.model.dto.UserPage;
 import com.qk.model.dto.UserSaveDTO;
 import com.qk.model.vo.UserVO;
 
+import java.util.List;
+
 /**
  * @author 33465
  * @created 2026/4/21 下午8:27
@@ -25,4 +27,9 @@ public interface UserService {
      */
     void save(UserSaveDTO dto);
 
+    /**
+     * 删除用户信息
+     * @param ids
+     */
+    void deleteByIds(List<Integer> ids);
 }

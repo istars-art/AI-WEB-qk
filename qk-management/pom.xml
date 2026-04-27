@@ -35,11 +35,6 @@
 
         <!--项目间模块依赖关系  end-->
 
-        <!--WEB开发的起步依赖-->
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web</artifactId>
-        </dependency>
         <!--Mybatis起步依赖-->
         <dependency>
             <groupId>org.mybatis.spring.boot</groupId>

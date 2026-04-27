@@ -36,4 +36,10 @@ public interface UserMapper {
      * @param user
      */
     void insert(User user);
+
+    /**
+     * 根据id列表删除用户信息
+     * @param ids
+     */
+    void deleteByIds(List<Integer> ids);
 }

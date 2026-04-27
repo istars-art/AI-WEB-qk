@@ -12,8 +12,21 @@
 
     <!--当前项目继承了父项目，自动继承父项目的groupId 和 version-->
     <artifactId>qk-common</artifactId>
+    <dependencies>
+        <dependency>
+            <groupId>org.testng</groupId>
+            <artifactId>testng</artifactId>
+            <version>RELEASE</version>
+            <scope>compile</scope>
+        </dependency>
+        <!--WEB开发的起步依赖-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+    </dependencies>
 
-<!--    <properties>-->
+    <!--    <properties>-->
 <!--        <maven.compiler.source>21</maven.compiler.source>-->
 <!--        <maven.compiler.target>21</maven.compiler.target>-->
 <!--        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>-->
