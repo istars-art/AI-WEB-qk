@@ -46,6 +46,29 @@ public class UserController {
         return Result.success();
     }
 
+    @GetMapping("/{id}")
+    public Result getById(@PathVariable Integer id){
+        UserVO userVO = userService.getById(id);
+        return Result.success(userVO);
+    }
+
+    @GetMapping("/list")
+    public Result getAll(){
+        List<UserVO> userVOs = userService.selectAll();
+        return Result.success(userVOs);
+    }
+
+    @GetMapping("/role/{roleLabel}")
+    public Result getByRole(@PathVariable String roleLabel){
+        List<UserVO> userVOs = userService.getByRole(roleLabel);
+        return Result.success(userVOs);
+    }
+
+    @GetMapping("/dept/{deptId}")
+    public Result getByDeptId(@PathVariable Integer deptId){
+        List<UserVO> userVOs = userService.getByDeptId(deptId);
+        return Result.success(userVOs);
+    }
 
 }
    

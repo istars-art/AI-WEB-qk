@@ -4,6 +4,7 @@ import com.qk.model.dto.UserPage;
 import com.qk.model.entity.User;
 import com.qk.model.entity.dos.UserDO;
 import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Select;
 
 import java.util.List;
 
@@ -42,4 +43,48 @@ public interface UserMapper {
      * @param ids
      */
     void deleteByIds(List<Integer> ids);
+
+    /**
+     * 根据id列表查询用户信息
+     * @param ids
+     * @return
+     */
+    List<User> selectByIds(List<Integer> ids);
+
+    /**
+     * 根据id查询用户信息
+     * @param id
+     * @return
+     */
+    User selectById(Integer id);
+
+    /**
+     * 查询所有用户信息
+     * @return
+     */
+    @Select("select * from user")
+    List<User> selectAll();
+
+    /**
+     * 根据角色查询用户信息
+     * @param roleLabel
+     * @return
+     */
+    List<User> selectByRoleLabel(String roleLabel);
+
+    /**
+     * 根据部门id查询用户信息
+     * @param deptId
+     * @return
+     */
+    List<User> selectByDeptId(Integer deptId);
+
+    /**
+     * 根据用户名和密码查询用户信息
+     * @param username 用户名
+     * @param password 密码
+     * @return 用户信息
+     */
+    @Select("select * from user where username = #{username} and password = #{password}")
+    User selectByUsernameAndPassword(String username, String password);
 }

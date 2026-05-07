@@ -32,4 +32,32 @@ public interface UserService {
      * @param ids
      */
     void deleteByIds(List<Integer> ids);
+
+    /**
+     * 根据id查询用户信息
+     * @param id
+     * @return UserVO
+     */
+    UserVO getById(Integer id);
+
+    /**
+     * 查询所有用户信息
+     * @return List<UserVO>
+     */
+    List<UserVO> selectAll();
+
+
+    /**
+     * 根据角色查询用户信息
+     * @param roleLabel
+     * @return List<UserVO>
+     */
+    List<UserVO> getByRole(String roleLabel);
+
+    /**
+     * 根据部门id查询用户信息
+     * @param deptId
+     * @return List<UserVO>
+     */
+    List<UserVO> getByDeptId(Integer deptId);
 }

@@ -18,7 +18,10 @@ public enum QkBizExceptionInfoEnum implements Code{
     USER_PHONE_EXIST(4002, "手机号已存在"),
     USER_EMAIL_EXIST(4003, "邮箱已存在"),
     USER_ID_ERROR(4004, "用户id不合法"),
-    USER_NOT_EXIST(4005,"用户id不存在");
+    USER_NOT_EXIST(4005,"用户id不存在"),
+    ACTIVITY_IS_IN_PROGRESS(5001,"活动进行中，无法删除！" ),
+    ACTIVITY_EXIST(5002, "活动名称重复"),
+    LOGIN_ACCOUNT_OR_PASSWORD_ERROR(9001, "登录账号或密码错误！");
 
     private final Integer value;
     private final String msg;

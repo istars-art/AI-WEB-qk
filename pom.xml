@@ -29,23 +29,29 @@
         <maven.compiler.target>21</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <spring.boot.version>3.5.13</spring.boot.version>
-        <mybatis.spring.version>3.0.5</mybatis.spring.version>
+<!--        <mybatis.spring.version>3.0.5</mybatis.spring.version>-->
         <pagehelper.version>2.1.0</pagehelper.version>
+        <mp.version>3.5.13</mp.version>
     </properties>
 
     <!--依赖管理：声明依赖坐标，不会实际引入依赖-->
     <dependencyManagement>
         <dependencies>
+<!--            <dependency>-->
+<!--                <groupId>org.mybatis.spring.boot</groupId>-->
+<!--                <artifactId>mybatis-spring-boot-starter</artifactId>-->
+<!--                <version>${mybatis.spring.version}</version>-->
+<!--            </dependency>-->
+<!--            <dependency>-->
+<!--                <groupId>org.mybatis.spring.boot</groupId>-->
+<!--                <artifactId>mybatis-spring-boot-starter-test</artifactId>-->
+<!--                <version>${mybatis.spring.version}</version>-->
+<!--                <scope>test</scope>-->
+<!--            </dependency>-->
             <dependency>
-                <groupId>org.mybatis.spring.boot</groupId>
-                <artifactId>mybatis-spring-boot-starter</artifactId>
-                <version>${mybatis.spring.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.mybatis.spring.boot</groupId>
-                <artifactId>mybatis-spring-boot-starter-test</artifactId>
-                <version>${mybatis.spring.version}</version>
-                <scope>test</scope>
+                <groupId>com.baomidou</groupId>
+                <artifactId>mybatis-plus-spring-boot3-starter</artifactId>
+                <version>${mp.version}</version>
             </dependency>
             <dependency>
                 <groupId>com.github.pagehelper</groupId>
@@ -56,6 +62,10 @@
                         <groupId>org.mybatis</groupId>
                         <artifactId>mybatis</artifactId>
                     </exclusion>
+                    <exclusion>
+                    <groupId>org.mybatis</groupId>
+                    <artifactId>mybatis-spring</artifactId>
+                </exclusion>
                 </exclusions>
             </dependency>
         </dependencies>

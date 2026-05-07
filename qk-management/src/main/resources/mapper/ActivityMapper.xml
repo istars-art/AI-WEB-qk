@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.qk.management.mapper.ActivityMapper">
+    <!-- ... existing code ... -->
+    <insert id="insert" parameterType="com.qk.model.entity.Activity">
+        INSERT INTO activity(
+            channel,
+            name,
+            start_time,
+            end_time,
+            description,
+            type,
+            discount,
+            voucher,
+            create_time,
+            update_time
+        ) VALUES (
+            #{channel},
+            #{name},
+            #{startTime},
+            #{endTime},
+            #{description},
+            #{type},
+            #{discount},
+            #{voucher},
+            #{createTime},
+            #{updateTime}
+        )
+    </insert>
+    <update id="update" parameterType="com.qk.model.entity.Activity">
+        UPDATE
+            activity
+        SET
+            channel = #{channel},
+            name = #{name},
+            start_time = #{startTime},
+            end_time = #{endTime},
+            description = #{description},
+            type = #{type},
+            discount = #{discount},
+            voucher = #{voucher},
+            update_time = #{updateTime}
+        WHERE id = #{id}
+    </update>
+    <!-- ... existing code ... -->
+
+
+    <select id="selectByPageCondition" resultType="com.qk.model.entity.Activity"
+            parameterType="com.qk.model.dto.ActivityPage">
+        SELECT * FROM activity
+        <where>
+            <if test="channel != null">
+                AND channel = #{channel}
+            </if>
+            <if test="type != null">
+                AND type = #{type}
+            </if>
+            <if test="status == 1">
+                AND start_time &gt; NOW()
+            </if>
+            <if test="status == 2">
+                AND start_time &lt;= NOW() AND end_time &gt;= NOW()
+            </if>
+            <if test="status == 3">
+                AND end_time &lt; NOW()
+            </if>
+        </where>
+    </select>
+</mapper>

@@ -22,3 +22,9 @@ aliyun:
     bucket-name: qkgj-istar
     endpoint: oss-cn-hangzhou.aliyuncs.com
     region: cn-hangzhou
+
+mybatis-plus:
+  configuration:
+    map-underscore-to-camel-case: true
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  mapper-locations: classpath:mapper/*.xml

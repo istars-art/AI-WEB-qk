@@ -67,4 +67,38 @@
         OR email = #{email}
         LIMIT 1
     </select>
+    <select id="selectByIds" resultType="com.qk.model.entity.User">
+        SELECT
+            *
+        FROM
+            user
+        WHERE id IN
+        <foreach item="id" collection="ids" separator="," open="(" close=")">
+            #{id}
+        </foreach>
+    </select>
+    <select id="selectById" resultType="com.qk.model.entity.User" parameterType="java.lang.Integer">
+        SELECT
+            *
+        FROM
+            user
+        WHERE
+            id = #{id}
+    </select>
+    <select id="selectByRoleLabel" resultType="com.qk.model.entity.User" parameterType="java.lang.String">
+        SELECT
+            *
+        FROM
+            user
+        WHERE
+           role_id IN (SELECT id FROM role WHERE label = #{roleLabel})
+    </select>
+    <select id="selectByDeptId" resultType="com.qk.model.entity.User" parameterType="java.lang.Integer">
+        SELECT
+            *
+        FROM
+            user
+        WHERE
+            dept_id = #{deptId}
+    </select>
 </mapper>

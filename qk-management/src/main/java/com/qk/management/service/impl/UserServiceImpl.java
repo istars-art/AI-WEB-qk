@@ -2,6 +2,8 @@ package com.qk.management.service.impl;
 
 import cn.hutool.core.bean.BeanUtil;
 import cn.hutool.core.util.DesensitizedUtil;
+import com.alibaba.oss.core.AliYunOssTemplate;
+import com.aliyuncs.exceptions.ClientException;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import com.qk.common.PageResult;
@@ -31,6 +33,9 @@ public class UserServiceImpl implements UserService {
 
     @Autowired
     private UserMapper userMapper;
+
+    @Autowired
+    private AliYunOssTemplate aliYunOssTemplate;
 
     @Override
     public PageResult<UserVO> page(UserPage pageDTO) {
@@ -80,7 +85,57 @@ public class UserServiceImpl implements UserService {
     @Override
     public void deleteByIds(List<Integer> ids) {
         userMapper.deleteByIds(ids);
+//        List<User> users = userMapper.selectByIds(ids);
+//        users.forEach(user -> {
+//            if (Objects.nonNull(user.getImage())){
+//                try {
+//                    aliYunOssTemplate.delete(user.getImage());
+//                } catch (ClientException e) {
+//                    throw new RuntimeException(e);
+//                }
+//            }
+//        });
+        userMapper.selectByIds(ids).stream()
+                .map(User::getImage)
+                .forEach(image -> {
+                    try {
+                        aliYunOssTemplate.delete(image);
+                    } catch (ClientException e) {
+                        throw new RuntimeException(e);
+                    }
+                });
+    }
 
+    @Override
+    public UserVO getById(Integer id) {
+        User user = userMapper.selectById(id);
+
+        return BeanUtil.copyProperties(user, UserVO.class);
+    }
+
+    @Override
+    public List<UserVO> selectAll() {
+        List<User> users = userMapper.selectAll();
+
+        return users.stream()
+                .map(user -> BeanUtil.copyProperties(user, UserVO.class))
+                .toList();
+    }
+
+    @Override
+    public List<UserVO> getByRole(String roleLabel) {
+        return userMapper.selectByRoleLabel(roleLabel)
+                .stream()
+                .map(user -> BeanUtil.copyProperties(user, UserVO.class))
+                .toList();
+    }
+
+    @Override
+    public List<UserVO> getByDeptId(Integer deptId) {
+        return userMapper.selectByDeptId(deptId)
+                .stream()
+                .map(user -> BeanUtil.copyProperties(user, UserVO.class))
+                .toList();
     }
 }
    

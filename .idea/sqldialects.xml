@@ -1,9 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="SqlDialectMappings">
+    <file url="file://$PROJECT_DIR$/qk-management/src/main/java/com/qk/management/mapper/ActivityMapper.java" dialect="GenericSQL" />
+    <file url="file://$PROJECT_DIR$/qk-management/src/main/java/com/qk/management/mapper/UserMapper.java" dialect="MySQL" />
+    <file url="file://$PROJECT_DIR$/qk-management/src/main/resources/mapper/ActivityMapper.xml" dialect="MySQL" />
     <file url="file://$PROJECT_DIR$/qk-management/src/main/resources/mapper/CourseMapper.xml" dialect="MySQL" />
     <file url="file://$PROJECT_DIR$/qk-management/src/main/resources/mapper/DeptMapper.xml" dialect="MySQL" />
     <file url="file://$PROJECT_DIR$/qk-management/src/main/resources/mapper/RoleMapper.xml" dialect="MySQL" />
     <file url="file://$PROJECT_DIR$/qk-management/src/main/resources/mapper/UserMapper.xml" dialect="MySQL" />
+    <file url="PROJECT" dialect="MySQL" />
   </component>
 </project>
